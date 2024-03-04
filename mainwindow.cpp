@@ -38,4 +38,5 @@ void MainWindow::ConvertCurrency()
 void MainWindow::SetCurrencyList(QStringList currency_list)
 {
     ui->currency_setter->addItems(currency_list);
+    ui->result_currency->addItems(currency_list);
 }
