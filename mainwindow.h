@@ -25,6 +25,7 @@ private:
     CurrencyApi *api_manager;
 
     void SetCurrencyList(QStringList currency_list);
+    void SetCurrencyConvertedValue(double currency_value);
 
 private slots:
     void ConvertCurrency();
