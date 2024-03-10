@@ -17,12 +17,17 @@ public:
     ~CurrencyApi();
 
     void CurrencyApi_GetCurrencyList();
+    void CurrencyApi_GetCurrencyValue(QByteArray base_currency, QByteArray result_currency);
+
+    void CurrencyApi_ProcessCurrencyListReply(QNetworkReply * reply);
+    void CurrencyApi_ProcessCurrencyValueReply(QNetworkReply * reply);
 
 public slots:
-    void CurrencyApi_ProcessCurrencyListReply(QNetworkReply * reply);
+    void CurrencyApi_ProcessReply(QNetworkReply * reply);
 
 signals:
     void CurrencyApi_CurrencyListReplyFinished(QStringList currency_list);
+    void CurrencyApi_CurrencyValueReplyFinished(double currency_value);
 
 private:
     QNetworkAccessManager *currency_api_manager;
